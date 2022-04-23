@@ -1,12 +1,12 @@
 const router = require('express').Router();
 
 const apiRoutes = require('./api');
-const homeRoutes = require('./home-routes')
-const dashboardRoutes = require('./dashboard-routes.js');
+// const homeRoutes = require('./home-routes')
+// const dashboardRoutes = require('./dashboard-routes.js');
 
-router.use('/', homeRoutes);
+// router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/dashboard', dashboardRoutes);
+// router.use('/dashboard', dashboardRoutes);
 
 //if a client makes an request to an endpoint that does not exist, they will receive a 404 error.
 router.use((req, res) => {
