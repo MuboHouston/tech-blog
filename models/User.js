@@ -8,7 +8,7 @@ class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
-}
+}   
 
 // define table columns and configuration
 User.init(
@@ -33,7 +33,7 @@ User.init(
 },
 {
     hooks: {
-        //whne a user creates a password, it is hashed
+        //when a user creates a password, it is hashed
         async beforeCreate(newUserData) {
             //password is collected then hashed using bcrypt
             newUserData.password = await bcrypt.hash(newUserData. password, 10);
