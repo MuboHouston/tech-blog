@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(require('./controllers/'));
 
 // turn on connection to db and server. force:true is to "DROP TABLE IF EXISTS". After creating a new association between tables, change to true, then restart the server. This will drop the tables so the application can re-create them and implement the association. **Make sure to change the connection back to false afterwards or it will drop the tables every time you restart the server.
-sequelize.sync({ force: true })
+sequelize.sync({ force: false})
 .then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
