@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
-
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
         order: [['created_at', 'DESC']],
         where: {
@@ -51,7 +51,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     
     Post.findByPk( req.params.id, {
         order: [['created_at', 'DESC']],
