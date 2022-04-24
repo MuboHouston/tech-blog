@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 router.get('/', (req, res) => {
 
     Post.findAll({
+        order: [['created_at', 'DESC']],
         where: {
             user_id: req.session.user_id
         },
@@ -53,6 +54,7 @@ router.get('/', (req, res) => {
 router.get('/edit/:id', (req, res) => {
     
     Post.findByPk( req.params.id, {
+        order: [['created_at', 'DESC']],
         attributes: [
             'id',
             'post_content',
@@ -61,18 +63,19 @@ router.get('/edit/:id', (req, res) => {
         ],
         include: [
             {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-            include: {
-                model: User,
-                attributes: ['username']
-            }
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             },
             {
-            model: User,
-            attributes: ['username']
-            }
-        ]
+                model: User,
+                attributes: ['username']
+            },
+        ],
+        order: [[Comment, 'created_at', 'DESC']],
     })
     .then(dbPostData => {
         if(dbPostData) {

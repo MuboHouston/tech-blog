@@ -3,6 +3,7 @@ const { Post, User, Comment } = require('../models')
 
 router.get('/', (req, res) => {
     Post.findAll({
+        order: [['created_at', 'DESC']],
         attributes: [
             'id',
             'post_content',
@@ -28,7 +29,7 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['username']
             }
-        ]
+        ],
     })
     .then(dbPostData => {
         //this  will loop over and map each Sequelize object into a serialized version of itself, saving the results in a new posts array
@@ -69,7 +70,8 @@ router.get('/post/:id', (req, res) => {
             model: User,
             attributes: ['username']
             }
-        ]
+        ], 
+        order: [[Comment, 'created_at', 'DESC']],
     })
     .then(dbPostData => {
         if (!dbPostData) {
