@@ -1,6 +1,6 @@
 //import all models
 const User = require('./User');
-// const Post = require('./Post');
+const Post = require('./Post');
 // const Comment = require('./Comment');
 
 // create associations
@@ -28,4 +28,4 @@ const User = require('./User');
 //   foreignKey: 'post_id'
 // });
 
-module.exports = { User };
+module.exports = { User, Post };
