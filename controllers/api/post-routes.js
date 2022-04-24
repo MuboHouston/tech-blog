@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User, Comment } = require('../../models');
 
 // get all posts
 router.get('/', (req, res) => {
@@ -13,29 +13,29 @@ router.get('/', (req, res) => {
             'created_at'
 
         ],
-        // include: [
-        //     {
-        //         model: Comment,
-        //         attributes: [
-        //             'id',
-        //             'comment_text',
-        //             'post_id',
-        //             'user_id',
-        //             'created_at'
-        //         ],
-        //         include: {
-        //             model: User,
-        //             attributes: ['username']
-        //         }
-        //     },
-        //     //include JOIN the Post to the User table. This is an array of objects for the event that more than one table JOIN is needed.
-        //     {
-        //         model: User,
-        //         attributes: [
-        //             'username'
-        //         ]
-        //     },
-        // ],
+        include: [
+            {
+                model: Comment,
+                attributes: [
+                    'id',
+                    'comment_text',
+                    'post_id',
+                    'user_id',
+                    'created_at'
+                ],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            //include JOIN the Post to the User table. This is an array of objects for the event that more than one table JOIN is needed.
+            {
+                model: User,
+                attributes: [
+                    'username'
+                ]
+            },
+        ],
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err=>{
@@ -56,28 +56,28 @@ router.get('/:id', (req, res) => {
             'title', 
             'created_at'
         ],
-    //     include: [
-    //         {
-    //             model: Comment,
-    //             attributes: [
-    //                 'id',
-    //                 'comment_text',
-    //                 'post_id',
-    //                 'user_id',
-    //                 'created_at'
-    //             ],
-    //             include: { 
-    //                 model: User,
-    //                 attributes: [
-    //                     'username'
-    //                 ]
-    //             }
-    //         },
-    //     {
-    //         model: User,
-    //         attributes: ['username']
-    //     }
-    // ]
+        include: [
+            {
+                model: Comment,
+                attributes: [
+                    'id',
+                    'comment_text',
+                    'post_id',
+                    'user_id',
+                    'created_at'
+                ],
+                include: { 
+                    model: User,
+                    attributes: [
+                        'username'
+                    ]
+                }
+            },
+        {
+            model: User,
+            attributes: ['username']
+        }
+    ]
     })
       .then(dbPostData => {
         if (!dbPostData) {
