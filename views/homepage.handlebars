@@ -2,7 +2,16 @@
     {{!-- this loops over the posts array in the home-routes file --}}
     {{#each posts as |post|}}
     <li>
-        {{> post-info post}}
+        <article class="post">
+            <div class="title">
+                <a href="/post/{{id}}">{{title}}</a> by {{user.username}}
+                <br>
+           
+            </div>
+            <div class="meta">
+                {{created_at}}
+            |</div>
+        </article>
     </li>
     {{/each}}
 </ol>
