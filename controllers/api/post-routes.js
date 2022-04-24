@@ -110,7 +110,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Post.update(
         {
-            post_content: req.body.post_content
+            title: req.body.title
         },
         {
             where: {

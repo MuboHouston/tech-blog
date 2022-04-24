@@ -130,7 +130,6 @@ router.post('/logout', (req, res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-    // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
         //needed when using beforeUpdate method in hooks property in User.js file
         individualHooks: true,
