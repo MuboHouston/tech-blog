@@ -1,0 +1,40 @@
+:root {
+    --primary-color: #eee7e1;
+    --secondary-color: #1a1919;
+    --tertiary-color:  #e2c2b3;
+    --heading-font: 'Abril Fatface', Verdana, Geneva, Tahoma, sans-serif;
+    --text-font: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+* {
+    background-color: var(--primary-color);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    padding: 10px 0 10px 30px;
+    color: var(--secondary-color);
+}
+
+header, header nav, header h1 {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
+nav a {
+    font-family: var(--text-font);
+    text-decoration: none;
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
+.main-title a {
+    font-family: var(--heading-font);
+    text-decoration: none;
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
