@@ -5,8 +5,8 @@
     <span>{{post_content}}</span>
   </div>
   <div class="meta">
-    {{created_at}}
+    {{format_date created_at}}
     |
-    <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment"}}</a>
   </div>
 </article>
