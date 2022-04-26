@@ -3,6 +3,7 @@ const { User, Post, Comment } = require('../../models');
 
 // GET /api/users
 router.get('/', (req, res) => {
+    console.log(req)
     User.findAll({
         //returns all data but the password to protect user's password
         attributes: { exclude: ['password'] }

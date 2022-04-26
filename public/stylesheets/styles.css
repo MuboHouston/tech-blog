@@ -68,11 +68,11 @@ li {
 }
 
 .new-post {
-    position: fixed;
-    bottom: 20px;
     width: 25%;
-    margin: 0 auto;
-    left: 50%;
+    left: 40%;
+    margin: 20px;
+    position: -webkit-sticky;   
+    position: sticky;
 }
 
 .edit-input {
