@@ -53,3 +53,8 @@ li {
 .signup-form, .login-form {
     padding: 10px 0 10px 30px;
 }
+
+
+.comments .meta{
+    background-color: var(--tertiary-color);
+}
