@@ -58,3 +58,23 @@ li {
 .comments .meta{
     background-color: var(--tertiary-color);
 }
+
+.buttons, .new-post-btn, .edit-post-btn, .add-comment-btn, .login-btn, .signup-btn {
+    background-color: var(--tertiary-color);
+}
+
+.edit-btns {
+    width: 15%;
+}
+
+.new-post {
+    position: fixed;
+    bottom: 20px;
+    width: 25%;
+    margin: 0 auto;
+    left: 50%;
+}
+
+.edit-input {
+    line-height: 10px;
+}

@@ -1,34 +1,43 @@
 <article>
-    <a href="/dashboard"> &larr; Back to dashboard</a>
-    <h2 class="mt-3">
-        Edit Post
-    </h2>
-    <form class="edit-post-form">
-        <div>
-            <input name="post-title" type="text" value="{{post.title}}" />
-            <br />
-            <input name="post-content" type="text" class="mt-2" value="{{post.post_content}}" />
-        </div>
-        <div>
-            {{format_date post.created_at}}
-            |
-            <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-        </div>
-        <button type="submit">Save Post</button>
-        <button type="submit" class="delete-post-btn">Delete Post</button>
-    </form>
+    <a class="text-decoration-none text-dark" href="/dashboard"> <u>&larr; Back to dashboard</u></a>
+    <div class="m-3">
+        <h2>
+            Edit Post
+        </h2>
+        <form class="edit-post-form">
+            <div>
+                <label for="post-title" style="font-weight: bold;">Title:</label>
+                <br>
+                <input name="post-title" type="text" class="w-25" value="{{post.title}}" />
+                <br />
+                <label for="post-content" class="mt-2" style="font-weight: bold;">Content:</label>
+                <br>
+                <textarea name="post-content" class="edit-input" style="line-height: 20px;"> {{post.post_content}} </textarea>
+                
+            </div>
+            <div class="mb-2">
+                Created on {{format_date post.created_at}}
+                |
+                <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+            </div>
+            <button class="buttons edit-btns rounded-3 p-1" type="submit">Save Post</button>
+            <button class="buttons edit-btns rounded-3 p-1 ms-4" type="submit" class="delete-post-btn">Delete Post</button>
+        </form>
+    </div>
 </article>
 
 <form class="comment-form">
-    <h1>
-        Comments
-    </h1>
-    <div>
-        <textarea name="comment-body"></textarea>
-    </div>
+    <div class="m-3 mt-4">
+        <h2>
+            Comments
+        </h2>
+        <div>
+            <textarea name="comment-body" style="line-height: 20px" rows="7" cols="30"></textarea>
+        </div>
 
-    <div>
-        <button type="submit">Add Comment</button>
+        <div>
+            <button class="buttons edit-btns rounded-3 p-1" type="submit">Add Comment</button>
+        </div>
     </div>
 </form>
 

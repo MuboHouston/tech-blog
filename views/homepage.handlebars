@@ -3,10 +3,10 @@
     {{!-- this loops over the posts array in the home-routes file --}}
     {{#each posts as |post|}}
     <li>
-        <article class="post my-3 border border-dark">
+        <article class="post my-3 border border-dark rounded-3">
             <a class="text-decoration-none text-dark" href="/post/{{id}}">
                 <div class="container-fluid border-bottom border-dark">
-                    <div class="post-header row justify-content-between">
+                    <div class="post-header row justify-content-between my-2">
                         <div class="title col-auto me-auto text-start fw-bold">
                             {{title}}
                         </div> 
@@ -17,7 +17,7 @@
                     </div>
                 </div>
 
-                <div class="p-2">
+                <div class="p-2 my-2">
                     {{post_content}}
                 </div>
             </a>
