@@ -1,12 +1,19 @@
-<article class="post">
-  <div class="title">
-    {{title}} by {{user.username}}
-    <br>
-    <span>{{post_content}}</span>
-  </div>
-  <div class="meta">
-    {{format_date created_at}}
-    |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
+<article class="post border border-dark me-4 mt-3">
+  <a class="text-decoration-none text-dark" href="/post/{{id}}">
+    <div class="container-fluid border-bottom border-dark">
+      <div class="post-header row justify-content-between">
+        <div class="title col-auto me-auto text-start fw-bold">
+          {{title}}
+        </div> 
+
+        <div class="author fw-bold col-auto text-end">
+          Posted by {{user.username}} on {{format_date created_at}}
+        </div>   
+      </div>
+    </div>
+
+    <div class="p-2">
+      {{post_content}}
+    </div>
+  </a>
 </article>

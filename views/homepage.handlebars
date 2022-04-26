@@ -1,20 +1,28 @@
-<ol class="post-list">
+{{#if posts.length}}
+<ol class="post-list p-4">
     {{!-- this loops over the posts array in the home-routes file --}}
     {{#each posts as |post|}}
     <li>
-        <article class="post">
-            <div class="title">
-                <a href="/post/{{id}}">{{title}}</a>
-            </div> 
+        <article class="post my-3 border border-dark">
+            <a class="text-decoration-none text-dark" href="/post/{{id}}">
+                <div class="container-fluid border-bottom border-dark">
+                    <div class="post-header row justify-content-between">
+                        <div class="title col-auto me-auto text-start fw-bold">
+                            {{title}}
+                        </div> 
 
-            <div class="author">
-                Posted by {{user.username}} on {{format_date created_at}}
-            </div>   
+                        <div class="author fw-bold col-auto text-end">
+                            Posted by {{user.username}} on {{format_date created_at}}
+                        </div>   
+                    </div>
+                </div>
 
-            <div>
-                {{post_content}}
-            </div>
+                <div class="p-2">
+                    {{post_content}}
+                </div>
+            </a>
         </article>
     </li>
     {{/each}}
 </ol>
+{{/if}}

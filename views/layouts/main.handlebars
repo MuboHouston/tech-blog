@@ -11,11 +11,11 @@
 <body>
     <div>
         <header>
-            <nav>
+            <nav class="pb-2 fs-5">
                 {{#if loggedIn}}
-                <a href="/"">Home</a>
+                <a class="pl-" href="/"">Home</a>
                 <a href="/dashboard">Dashboard</a>
-                <button  id="logout">Logout</button>
+                <button  class="bg-transparent" style="border: none;" id="logout">Logout</button>
                 {{else}}
                 <a href="/">Home</a>
                 <a href="/login">Dashboard</a>
@@ -23,7 +23,7 @@
                 {{/if}}
             </nav>
 
-            <h1 class="main-title">
+            <h1 class="main-title rounded-3 shadow">
                 <a href="/">
                     Tech Blog
                 </a> 

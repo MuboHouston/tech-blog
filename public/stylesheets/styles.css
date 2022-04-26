@@ -12,6 +12,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: var(--text-font);
 }
 
 header {
@@ -25,10 +26,16 @@ header, header nav, header h1 {
 }
 
 nav a {
-    font-family: var(--text-font);
     text-decoration: none;
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
+    padding-right: 15px;
+}
+
+.main-title {
+    padding: 10px;
+    background-color: var(--primary-color);
+    display: inline-flex;
 }
 
 .main-title a {
@@ -36,5 +43,13 @@ nav a {
     text-decoration: none;
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
+li {
+    list-style: none;
+}
+
+.signup-form, .login-form {
+    padding: 10px 0 10px 30px;
+}
