@@ -18,11 +18,14 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 #### Sign up Page
 ![Sign-up-page](public/img/signup.png)
 
+#### Homepage
+![Homepage](public/img/homepage.png)
+
 #### Dashboard
 ![Dashboard](public/img/dashboard.png)
 
-#### Homepage
-![Homepage](public/img/homepage.png)
+#### Edit Page
+![Edit-Page](public/img/edit-page.png)
 
 ## Table of Contents
 * [Features](#features)
