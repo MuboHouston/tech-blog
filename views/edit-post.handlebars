@@ -7,11 +7,11 @@
         <form class="edit-post-form">
             <div>
                 <label for="post-title" style="font-weight: bold;">Title:</label>
-                <br>
+                <br />
                 <input name="post-title" type="text" class="bg-white w-25 rounded-3 p-1" value="{{post.title}}" />
                 <br />
                 <label for="post-content" class="mt-2" style="font-weight: bold;">Content:</label>
-                <br>
+                <br />
                 <textarea name="post-content" class="edit-input bg-white rounded-3 p-1" style="line-height: 20px;" rows="10" cols="50"> {{post.post_content}} </textarea>
             </div>
             <div class="mb-2">
@@ -42,7 +42,7 @@
 
 {{> comments post.comments }}
 
-<div style="margin-bottom: 20px;></div>
+<div style="margin-bottom: 20px;"></div>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>

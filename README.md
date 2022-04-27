@@ -1,1 +1,2 @@
-# tech-blog
+# Tect Blog
+
