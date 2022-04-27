@@ -71,7 +71,7 @@ router.get('/post/:id', (req, res) => {
             attributes: ['username']
             }
         ], 
-        order: [[Comment, 'created_at', 'DESC']],
+        // order: [[Comment, 'created_at', 'DESC']],
     })
     .then(dbPostData => {
         if (!dbPostData) {
