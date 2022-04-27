@@ -11,10 +11,10 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 
 ## Screenshots
-[Homepage]!(public/img/homepage.png)
-[Dashboard]!(public/img/dashboard.png)
-[Login-Page]!(public/img/login.png)
-[Sign-up-page]!(public/img/signup.png)
+![Homepage](public/img/homepage.png)
+![Dashboard](public/img/dashboard.png)
+![Login-Page](public/img/login.png)
+![Sign-up-page](public/img/signup.png)
 
 ## Table of Contents
 * [Features](#features)
